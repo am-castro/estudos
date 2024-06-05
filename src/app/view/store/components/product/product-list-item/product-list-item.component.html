@@ -1,0 +1,36 @@
+<div class="w-full flex flex-nowrap bg-white border border-gray-200 rounded-xl shadow-xl cursor-pointer box-border overflow-hidden">
+  <img class="rounded-r-lg w-[290px] h-[200px]" [src]="product.image" alt="product image" />
+  <div class="p-6 w-full justify-between flex flex-col">
+      <div class="flex justify-between">
+        <h5 class="!text-lg !font-medium tracking-tight text-gray-900">{{product.description}}</h5>
+        <div class="flex items-center mt-2.5 mb-5">
+            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+              @if(product.stars != 0) {
+                  @for (star of stars; track $index) {
+                      <svg class="w-4 h-4 {{star ? 'text-yellow-300' : 'text-gray-200'}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                      </svg>
+                  }
+                  <!-- <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">{{getStarsQuantity()}}</span> -->
+              } @else {
+                  <span class="text-gray-400">Sem avaliações</span>
+              }
+            </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-between w-full">
+          <!-- <span class="text-xl text-gray-600 line-through">R$ {{product.price}} cada</span> -->
+          <span class="text-xl font-bold text-gray-900">R$ {{product.price * product.quantity}}</span>
+          @if (product.quantity === 0) {
+                <!-- <button mat-raised-button color="primary">Comprar</button> -->
+                <a class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" (click)="onAddProduct(product)">Comprar</a>
+          } @else {
+                <div class="flex flex-nowrap items-center border border-green-500 rounded-lg">
+                    <a class="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center" (click)="changeQuantity('-')">-</a>
+                    <span class="text-gray-900 font-semibold w-[40px] flex justify-center">{{product.quantity}}</span>
+                    <a class="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center" (click)="changeQuantity('+')">+</a>
+                </div>
+          }
+      </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="bg-white">
+  <header class="relative bg-white">
+    <!-- <p class="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">Get free delivery on orders over $100</p> -->
+
+    <nav aria-label="Top">
+      <div class="border-b border-orange-500">
+        <div class="flex h-16 items-center w-full">
+          <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+          <button type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Abrir menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+
+          <!-- Logo -->
+          <div class="ml-4 flex lg:ml-0">
+            <a href="#">
+              <span class="sr-only">Fortaleza Online Shopping</span>
+              <img class="h-14 w-auto" src="./assets/img/logo/icon.png" alt="Fortaleza Online Shopping">
+            </a>
+          </div>
+
+          <!-- Flyout menus -->
+          <div class="hidden lg:ml-8 lg:block lg:self-stretch">
+            <div class="flex h-full">
+              <!-- <div class="flex">
+                <div class="relative flex">
+                  <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" --
+                  <button type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Women</button>
+                </div>
+              </div> -->
+              <div class="flex space-x-8 flex-nowrap items-center">
+                <a class="flex items-center text-sm font-medium text-gray-700 hover:text-orange-500" [routerLink]="['/stores/products']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: false}">Produtos</a>
+                <a class="flex items-center text-sm font-medium text-gray-700 hover:text-orange-500" [routerLink]="['/stores/services']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: false}">Serviços</a>
+                <a class="flex items-center text-sm font-medium text-gray-700 hover:text-orange-500" [routerLink]="['/stores']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}">Empresas</a>
+                <div class="border border-gray-300 focus-within:border-orange-500 p-2 rounded-lg">
+                  <fa-icon [icon]="icons.search" class="group-hover:text-orange-500 text-gray-400"></fa-icon>
+                  <input type="text" placeholder="Pesquisar" class="ml-2 outline-none">
+                </div>
+                <!-- <a class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800" [routerLink]="['/stores/favorites']" routerLinkActive="router-link-active">Favoritos</a> -->
+                <!-- <a class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800" [routerLink]="['/store/tortas']" routerLinkActive="router-link-active">Tortas</a>
+                <a class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800" [routerLink]="['/store/pascoa']" routerLinkActive="router-link-active">Páscoa</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="ml-auto flex items-center">
+            <div class="space-x-8 flex-nowrap items-center hidden lg:flex">
+              <!-- <a class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800" [routerLink]="['/blog/receitas']" routerLinkActive="router-link-active">Receitas</a> -->
+              <a class="flex items-center text-sm font-medium hover:text-orange-500 text-gray-700" [routerLink]="['/chat']" routerLinkActive="router-link-active">
+                <fa-icon [icon]="icons.chat"></fa-icon>
+                <span class="ml-2">Chat</span>
+              </a>
+              <!-- <a class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800" [routerLink]="['/blog/sobre']" routerLinkActive="router-link-active">Sobre nós</a> -->
+              <!-- <a class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800" href="#clientes">Clientes</a> -->
+            </div>
+            <!-- <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+              <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+              <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+              <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
+            </div> -->
+
+            <!-- <div class="hidden lg:ml-8 lg:flex">
+              <a href="#" class="flex items-center text-gray-700 hover:text-gray-800">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/64px-Flag_of_Brazil.svg.png" alt="" class="block h-auto w-5 flex-shrink-0">
+                <span class="ml-3 block text-sm font-medium">PT</span>
+                <span class="sr-only">, change currency</span>
+              </a>
+            </div> -->
+
+            <!-- Search -->
+            <!-- <div class="flex lg:ml-6">
+              <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Search</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+              </a>
+            </div> -->
+
+            <!-- Cart -->
+            <div class="ml-2 flex-nowrap flex">
+              <a class="group m-2 flex items-center p-2" [routerLink]="['/stores/checkout']" routerLinkActive="router-link-active">
+                <svg class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-orange-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+                <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-orange-800">{{totalQuantityOnCart}}</span>
+                <span class="sr-only">items in cart, view bag</span>
+              </a>
+              <a class="group m-2 flex items-center p-2 bg-orange-500 rounded-md text-blue-50 hover:text-blue-100" [routerLink]="['/login']" routerLinkActive="router-link-active">
+                <fa-icon [icon]="icons.logon"></fa-icon>
+                <span class="ml-2 text-sm font-medium  text-blue-50 group-hover:text-blue-100">Login</span>
+              </a>
+              <!-- <a class="group flex items-center p-2 bg-orange-600 rounded-md text-blue-50 hover:text-blue-100" [routerLink]="['/store/checkout']" routerLinkActive="router-link-active">
+                <span class="text-sm font-medium  text-blue-50 group-hover:text-blue-100">Anunciar</span>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>

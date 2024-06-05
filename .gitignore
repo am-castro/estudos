@@ -1,0 +1,9 @@
+# npm & yarn & node
+node_modules
+package-lock.json
+yarn-error.log
+yarn.lock
+
+# angular
+dist
+.angular

@@ -1,0 +1,5 @@
+<div class="flex flex-wrap flex-row justify-start items-center w-full py-8 gap-2">
+    @for (store of storeItems; track $index) {
+        <app-store-card [store]="store" class="w-[24.5%] max-md:w-full max-lg:w-[49%] max-xl:w-[32%]"></app-store-card>
+    }
+</div>

@@ -1,0 +1,61 @@
+<form [formGroup]="filterFG" class="flex flex-col gap-y-4">
+    <div class="flex flex-col bg-orange-50 p-4">
+        Filtrar por
+        <mat-checkbox color="primary" formControlName="sendFree">Frete grátis</mat-checkbox>
+        <mat-checkbox color="primary">Semi-novo</mat-checkbox>
+        <mat-checkbox color="primary">Parceiro</mat-checkbox>
+    </div>
+    <div class="flex flex-col bg-orange-50 p-4">
+        Em oferta
+        <mat-checkbox color="primary">Ofertas</mat-checkbox>
+        <mat-slider min="0" max="5000" [discrete]="true" color="primary">
+            <input value="300" matSliderStartThumb formControlName="startPrice">
+            <input value="400" matSliderEndThumb formControlName="endPrice">
+        </mat-slider>
+        <div class="flex flex-nowrap">
+            <mat-form-field color="primary">
+                <mat-label>Min</mat-label>
+                <input matInput type="number" formControlName="startPrice">
+            </mat-form-field>
+            <mat-form-field color="primary">
+                <mat-label>Max</mat-label>
+                <input matInput type="number" formControlName="endPrice">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="flex flex-col bg-orange-50 p-4">
+        Categorias
+        @for (item of categories; track $index) {
+            <mat-checkbox color="primary" [value]="item.value">{{item.viewValue}}</mat-checkbox>
+        }
+    </div>
+</form>
+<!-- Criar lista com classe flex-col e itens radio
+<div class="flex flex-col">
+    <label class="flex items-center">
+        <input type="radio" class="form-radio">
+        <span class="ml-2">Radio 1</span>
+    </label>
+    <label class="flex items-center">
+        <input type="radio" class="form-radio">
+        <span class="ml-2">Radio 2</span>
+    </label>
+    <label class="flex items-center">
+        <input type="radio" class="form-radio">
+        <span class="ml-2">Radio 3</span>
+    </label>
+</div>
+Criar lista com classe flex-col e itens select
+<div class="flex flex-col">
+    <select class="form-select">
+        <option value="">Option 1</option>
+        <option value="">Option 2</option>
+        <option value="">Option 3</option>
+    </select>
+</div>
+Criar lista com classe flex-col e itens input
+<div class="flex flex-col">
+    <input type="text" class="form-input">
+    <input type="text" class="form-input">
+    <input type="text" class="form-input">
+</div> -->

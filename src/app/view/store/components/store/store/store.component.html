@@ -1,0 +1,33 @@
+<div class="w-full h-[400px] bg-black flex justify-center items-center relative box-border overflow-hidden rounded-b-lg">
+    <img class="w-full" src="https://scontent.ffor4-2.fna.fbcdn.net/v/t39.30808-6/327179590_1158704225035662_8969848928020103683_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=gJyAROgLJD8Ab4rsgEP&_nc_ht=scontent.ffor4-2.fna&oh=00_AfDSUtFw_W5gjoIv0IRA_XgtpoLfbb8udqSFEG5r6fRN0A&oe=66169E2A">
+</div>
+<div class="w-full h-40 relative">
+    <img class="w-40 h-40 left-4 top-[-3rem] absolute rounded-full border-4 border-gray-100" src="https://scontent.ffor4-2.fna.fbcdn.net/v/t39.30808-6/326533922_1224965868455401_2859619042225909397_n.png?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=dqwMbFqVLuwAb5-vNvz&_nc_ht=scontent.ffor4-2.fna&oh=00_AfAG1g_8R9gKAELzZETLCF-I36Z4EwbDnLdY7cq2f9JDXQ&oe=66168954">
+    <div class="!pl-56 pr-4 flex flex-nowrap w-full justify-between">
+        <div class="flex-col flex">
+            <h1 class="!text-3xl !font-bold !my-4">{{profileName}}</h1>
+            <p class="text-sm">Informática</p>
+        </div>
+        <div class="flex flex-row items-center">
+            <button mat-raised-button color="primary">+ Seguir</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="flex flex-nowrap">
+    <div class="w-[200px]">
+        <app-filter (filter)="searchBy($event)"></app-filter>
+    </div>
+    <div class="w-[70%]">
+        @for (product of products; track $index) {
+            <app-product-card [product]="product"></app-product-card>
+        }@empty {
+            <div class="flex flex-col justify-center items-center w-full text-gray-600">
+                <fa-icon [icon]="icons.noProduct" class="text-4xl"></fa-icon>
+                <p class="text-lg font-medium">Nenhum produto encontrado</p>
+            </div>
+        }
+    
+    </div>
+</div>
